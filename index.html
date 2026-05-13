@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-itunes-app" content="app-id=6476780044">
   <title>Lecoindine – Télécharger l'application</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -69,14 +70,22 @@
 
     function handleIOS(e) {
       e.preventDefault();
-      window.location.href = "itms-apps://apps.apple.com/fr/app/lecoindine-le-march%C3%A9-%C3%A9thique/id6476780044";
-      setTimeout(function() { window.location.href = IOS_URL; }, 1000);
+      var a = document.createElement('a');
+      a.href = IOS_URL;
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
 
     function handleAndroid(e) {
       e.preventDefault();
-      window.location.href = "market://details?id=com.orcsys.lecoindine";
-      setTimeout(function() { window.location.href = ANDROID_URL; }, 1000);
+      var a = document.createElement('a');
+      a.href = ANDROID_URL;
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   </script>
 </body>
